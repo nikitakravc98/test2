@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEST 123456</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #ff4d5a;
+      --bg: #0b0d12;
+      --fg: #f4f6fb;
+      --muted: #9aa3b2;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background:
+        linear-gradient(rgba(8, 10, 16, 0.55), rgba(8, 10, 16, 0.85)),
+        url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80")
+          center/cover no-repeat fixed;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 18vw, 16rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      background: linear-gradient(90deg, #ff4d5a, #ffb347, #4dd0ff, #b06bff);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 8s linear infinite;
+      text-shadow: 0 0 60px rgba(255, 77, 90, 0.25);
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    .hero p {
+      margin-top: 1.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.6rem);
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .hero .counter {
+      margin-top: 2rem;
+      font-size: clamp(1.2rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 40px rgba(255, 77, 90, 0.4);
+    }
+
+    .cta:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 16px 50px rgba(255, 77, 90, 0.55);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 0.9rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 10px); }
+    }
+
+    /* ---------- GALLERY ---------- */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+    .card .label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>TEST 123456</h1>
+    <p>Огромный заголовок, плавные анимации и красивые stock-фотографии с Unsplash.</p>
+    <div class="counter" id="counter">000000</div>
+    <button class="cta" id="cta">Поехали</button>
+    <div class="scroll-hint">↓ листай вниз ↓</div>
+  </header>
+
+  <main class="section" id="gallery">
+    <h2>Галерея</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Горный пейзаж" loading="lazy" />
+        <div class="label">Горы</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Пляж" loading="lazy" />
+        <div class="label">Океан</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Лес" loading="lazy" />
+        <div class="label">Лес</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Закат" loading="lazy" />
+        <div class="label">Закат</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Туман" loading="lazy" />
+        <div class="label">Туман</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80" alt="Долина" loading="lazy" />
+        <div class="label">Долина</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 TEST 123456 — собрано в одном index.html. Фото: Unsplash.</p>
+  </footer>
+
+  <script>
+    // Анимированный счётчик в hero
+    (function () {
+      var el = document.getElementById("counter");
+      var target = 123456;
+      var start = null;
+      var duration = 2500;
+
+      function pad(n) {
+        return String(n).padStart(6, "0");
+      }
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        // ease-out
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = pad(Math.floor(eased * target));
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+      requestAnimationFrame(step);
+    })();
+
+    // Кнопка прокручивает к галерее
+    document.getElementById("cta").addEventListener("click", function () {
+      document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Появление карточек при прокрутке
+    var cards = document.querySelectorAll(".card");
+    cards.forEach(function (c) {
+      c.style.opacity = "0";
+      c.style.transform = "translateY(30px)";
+      c.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cards.forEach(function (c) {
+      observer.observe(c);
+    });
+  </script>
+</body>
+</html>
