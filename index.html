@@ -1,849 +1,723 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="JD.MEBEL — корпусная мебель на заказ в Караганде. Кухни, шкафы-купе, гардеробные, детские, мебель для бизнеса. Более 1000 реализованных проектов. Индивидуальный расчёт под ваш бюджет." />
-  <title>JD.MEBEL — Корпусная мебель на заказ в Караганде</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Мебель — Корпусная мебель на заказ в Караганде | Создаём мебель вашей мечты</title>
+<meta name="description" content="JD Мебель — корпусная мебель на заказ в Караганде. Кухни, шкафы-купе, гардеробные, прихожие. Собственное производство, более 1000 успешных проектов. Замер бесплатно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a0a;
+  --bg-2:#141010;
+  --cream:#f4efe9;
+  --cream-2:#ece4da;
+  --beige:#d8c8b4;
+  --sand:#b59d80;
+  --red:#a31621;
+  --red-2:#7d1019;
+  --red-bright:#c41e2a;
+  --gold:#c9a86a;
+  --gold-soft:#e3cfa6;
+  --ink:#1a1413;
+  --muted:#9b9088;
+  --line:rgba(217,200,180,.16);
+  --radius:18px;
+  --maxw:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);
+  color:var(--cream);
+  line-height:1.6;
+  overflow-x:hidden;
+  font-size:16px;
+}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.serif{font-family:'Cormorant Garamond',serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.6}
+.section{padding:110px 0;position:relative}
+.section-head{max-width:720px;margin-bottom:56px}
+.section-head h2{font-size:clamp(30px,4.4vw,52px);margin:18px 0 0;color:var(--cream)}
+.section-head p{color:var(--muted);margin-top:18px;font-size:17px}
 
-    :root{
-      --red:#e21c2b;
-      --red-deep:#b30f1c;
-      --bg:#0a0a0c;
-      --bg-2:#111114;
-      --card:#16161a;
-      --line:rgba(255,255,255,.08);
-      --fg:#f4f5f7;
-      --muted:#9aa0ab;
-      --gold:#d8b46a;
-      --radius:18px;
-      --max:1240px;
-      --shadow:0 24px 70px rgba(0,0,0,.55);
-    }
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;border-radius:50px;font-weight:600;font-size:15px;
+  cursor:pointer;border:none;transition:.35s cubic-bezier(.2,.7,.3,1);
+  letter-spacing:.01em;font-family:'Manrope',sans-serif;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--red-bright),var(--red-2));color:#fff;box-shadow:0 14px 38px -12px rgba(163,22,33,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -14px rgba(196,30,42,.8)}
+.btn-wa{background:#25D366;color:#0a2e17}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(37,211,102,.55)}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-lg{padding:19px 38px;font-size:16px}
 
-    html{scroll-behavior:smooth}
-    body{
-      font-family:"Manrope",system-ui,Segoe UI,Roboto,sans-serif;
-      background:var(--bg);
-      color:var(--fg);
-      overflow-x:hidden;
-      line-height:1.55;
-      -webkit-font-smoothing:antialiased;
-    }
-    h1,h2,h3,.brand-name{font-family:"Unbounded","Manrope",sans-serif;letter-spacing:-.01em}
-    a{color:inherit;text-decoration:none}
-    img{display:block}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
-    section{position:relative}
+/* Header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  transition:.4s;padding:20px 0;
+}
+header.scrolled{background:rgba(12,10,10,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:13px}
+.logo-mark{
+  width:50px;height:50px;border-radius:50%;flex-shrink:0;
+  background:radial-gradient(circle at 35% 30%,#d8232f,#a31621 55%,#6c0d15);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 2px 6px rgba(255,255,255,.18),0 6px 18px -6px rgba(163,22,33,.6);
+  position:relative;overflow:hidden;
+}
+.logo-mark::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 70% 80%,rgba(0,0,0,.35),transparent 50%)}
+.logo-mark span{font-family:'Playfair Display',serif;font-weight:700;font-size:21px;color:#fff;letter-spacing:.02em;z-index:1;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.logo-text b{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;display:block;letter-spacing:.02em}
+.logo-text small{font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-top:1px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--cream-2);font-weight:500;position:relative;transition:.25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--gold);transition:.3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:16px}
+.nav-phone{font-weight:700;font-size:15.5px;color:var(--cream);white-space:nowrap}
+.nav-phone small{display:block;font-size:10px;font-weight:500;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{width:26px;height:2px;background:var(--cream);transition:.3s;border-radius:2px}
 
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-      color:var(--red);margin-bottom:18px;
-    }
-    .eyebrow::before{content:"";width:26px;height:2px;background:var(--red)}
-    .lead{color:var(--muted);font-size:1.05rem;max-width:620px}
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(12,10,10,.55) 0%,rgba(12,10,10,.7) 40%,rgba(12,10,10,.97) 100%),
+  radial-gradient(120% 80% at 80% 20%,rgba(163,22,33,.22),transparent 60%)}
+.hero-inner{max-width:880px}
+.hero h1{font-size:clamp(40px,7vw,86px);font-weight:700;line-height:1.04;margin:24px 0}
+.hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:500}
+.hero p{font-size:clamp(17px,2vw,21px);color:var(--cream-2);max-width:620px;margin-bottom:38px;font-weight:400}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-stats{display:flex;gap:46px;margin-top:64px;flex-wrap:wrap}
+.hero-stats .num{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);color:#fff;font-weight:700;line-height:1}
+.hero-stats .num em{color:var(--gold);font-style:normal}
+.hero-stats .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
 
-    /* ============ HEADER ============ */
-    header.nav{
-      position:fixed;top:0;left:0;right:0;z-index:90;
-      transition:background .35s ease, border-color .35s ease, padding .35s ease;
-      border-bottom:1px solid transparent;
-    }
-    header.nav.scrolled{
-      background:rgba(10,10,12,.82);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{
-      width:46px;height:46px;border-radius:12px;flex-shrink:0;
-      background:linear-gradient(145deg,var(--red),var(--red-deep));
-      display:flex;align-items:center;justify-content:center;
-      font-family:"Unbounded";font-weight:900;font-size:1.15rem;color:#fff;
-      box-shadow:0 8px 24px rgba(226,28,43,.45);
-    }
-    .logo .brand-name{font-size:1.25rem;font-weight:800}
-    .logo .brand-name span{color:var(--red)}
-    .logo small{display:block;font-family:"Manrope";font-size:.62rem;letter-spacing:.32em;color:var(--muted);font-weight:600;text-transform:uppercase;margin-top:2px}
-    nav.menu{display:flex;gap:30px;align-items:center}
-    nav.menu a{font-size:.92rem;font-weight:600;color:var(--muted);transition:color .2s}
-    nav.menu a:hover{color:var(--fg)}
-    .nav-phone{display:flex;flex-direction:column;align-items:flex-end}
-    .nav-phone b{font-size:1.02rem;font-weight:800}
-    .nav-phone small{color:var(--muted);font-size:.72rem}
-    .btn{
-      display:inline-flex;align-items:center;gap:9px;justify-content:center;
-      padding:13px 26px;border-radius:999px;font-weight:700;font-size:.95rem;
-      border:none;cursor:pointer;transition:transform .2s ease, box-shadow .25s ease, background .25s;
-      white-space:nowrap;
-    }
-    .btn-red{background:var(--red);color:#fff;box-shadow:0 12px 34px rgba(226,28,43,.4)}
-    .btn-red:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(226,28,43,.55)}
-    .btn-wa{background:#25d366;color:#06351a}
-    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(37,211,102,.45)}
-    .btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
-    .btn-ghost:hover{border-color:var(--red);color:#fff}
-    .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-    .burger span{width:24px;height:2px;background:#fff;display:block;transition:.3s}
+/* Marquee */
+.marquee{background:var(--red-2);overflow:hidden;padding:15px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.marquee-track{display:flex;gap:54px;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
+.marquee-track span{font-family:'Cormorant Garamond',serif;font-size:23px;font-style:italic;color:var(--gold-soft);display:flex;align-items:center;gap:54px}
+.marquee-track span::after{content:"✦";color:#fff;opacity:.5}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-    /* ============ HERO ============ */
-    .hero{
-      min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;
-      position:relative;overflow:hidden;
-    }
-    .hero::before{
-      content:"";position:absolute;inset:0;z-index:-2;
-      background:
-        linear-gradient(105deg,rgba(8,8,11,.96) 0%,rgba(8,8,11,.78) 42%,rgba(8,8,11,.35) 100%),
-        var(--img-hero) center/cover no-repeat;
-      --img-hero:url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=80");
-    }
-    .hero::after{
-      content:"";position:absolute;top:-20%;right:-10%;width:55vw;height:55vw;z-index:-1;
-      background:radial-gradient(circle,rgba(226,28,43,.22),transparent 62%);
-      filter:blur(20px);
-    }
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;width:100%}
-    .hero h1{
-      font-size:clamp(2.6rem,6vw,5rem);font-weight:900;line-height:1.02;margin-bottom:24px;
-    }
-    .hero h1 em{font-style:normal;color:var(--red)}
-    .hero .lead{font-size:1.18rem;max-width:560px}
-    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
-    .hero-stats{display:flex;gap:34px;margin-top:48px;flex-wrap:wrap}
-    .hero-stats .stat b{font-family:"Unbounded";font-size:2rem;font-weight:800;display:block;color:#fff}
-    .hero-stats .stat b i{color:var(--red);font-style:normal}
-    .hero-stats .stat span{color:var(--muted);font-size:.85rem}
+/* About */
+.about{background:var(--bg-2)}
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+.about-text h2{font-size:clamp(28px,4vw,46px);margin:18px 0 24px}
+.about-text p{color:var(--cream-2);margin-bottom:18px;font-size:16.5px}
+.about-points{list-style:none;margin-top:30px;display:grid;gap:18px}
+.about-points li{display:flex;gap:16px;align-items:flex-start;font-size:16px;color:var(--cream-2)}
+.about-points .ic{width:42px;height:42px;border-radius:12px;flex-shrink:0;background:rgba(163,22,33,.16);border:1px solid rgba(163,22,33,.35);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.about-visual{position:relative}
+.about-visual img{border-radius:var(--radius);width:100%;height:560px;object-fit:cover}
+.about-badge{position:absolute;bottom:-26px;left:-26px;background:linear-gradient(135deg,var(--red-bright),var(--red-2));padding:24px 30px;border-radius:16px;box-shadow:0 24px 50px -16px rgba(163,22,33,.7)}
+.about-badge b{font-family:'Playfair Display',serif;font-size:38px;display:block;line-height:1}
+.about-badge span{font-size:13px;color:rgba(255,255,255,.85);letter-spacing:.04em}
 
-    .hero-card{
-      background:rgba(20,20,24,.72);backdrop-filter:blur(10px);
-      border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);
-    }
-    .hero-card h3{font-size:1.25rem;margin-bottom:6px}
-    .hero-card p{color:var(--muted);font-size:.9rem;margin-bottom:20px}
-    .hero-card .field{margin-bottom:14px}
-    .scroll-hint{
-      position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-      color:var(--muted);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
-      animation:bob 2.2s infinite;
-    }
-    @keyframes bob{0%,100%{transform:translate(-50%,0);opacity:.6}50%{transform:translate(-50%,9px);opacity:1}}
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat-card{position:relative;border-radius:var(--radius);overflow:hidden;height:340px;cursor:pointer;background:#1a1414}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.3,1)}
+.cat-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(10,8,8,.92))}
+.cat-card:hover img{transform:scale(1.08)}
+.cat-info{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
+.cat-info h3{font-size:24px;margin-bottom:6px}
+.cat-info p{font-size:14px;color:var(--beige);opacity:.85}
+.cat-info .arrow{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--gold);font-weight:600;letter-spacing:.05em;transform:translateX(-6px);opacity:0;transition:.35s}
+.cat-card:hover .arrow{transform:translateX(0);opacity:1}
+.cat-tall{grid-row:span 1}
 
-    /* marquee */
-    .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg-2)}
-    .marquee-track{display:flex;gap:48px;padding:18px 0;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
-    .marquee-track span{font-family:"Unbounded";font-weight:700;font-size:1.05rem;color:var(--muted);display:inline-flex;align-items:center;gap:48px}
-    .marquee-track span::after{content:"◆";color:var(--red);font-size:.7rem}
-    @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Pricing philosophy */
+.pricing{background:linear-gradient(180deg,var(--bg) 0%,#16100f 100%);position:relative;overflow:hidden}
+.pricing::before{content:"";position:absolute;top:-120px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(163,22,33,.2),transparent 65%)}
+.price-quote{max-width:900px;margin:0 auto 70px;text-align:center;position:relative}
+.price-quote .qmark{font-family:'Playfair Display',serif;font-size:120px;color:var(--red);line-height:.4;opacity:.5}
+.price-quote h2{font-size:clamp(28px,4.4vw,50px);font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--cream);margin:10px 0 22px}
+.price-quote h2 b{color:var(--gold-soft);font-weight:600}
+.price-quote p{color:var(--muted);font-size:17px;max-width:640px;margin:0 auto}
+.price-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:54px}
+.factor{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:38px 32px;transition:.35s}
+.factor:hover{border-color:rgba(201,168,106,.5);transform:translateY(-6px);background:rgba(255,255,255,.05)}
+.factor .n{font-family:'Playfair Display',serif;font-size:46px;color:var(--red-bright);line-height:1;margin-bottom:16px;font-weight:700}
+.factor h3{font-size:21px;margin-bottom:10px}
+.factor p{color:var(--muted);font-size:15px}
+.price-note{background:linear-gradient(135deg,rgba(163,22,33,.14),rgba(201,168,106,.06));border:1px solid rgba(201,168,106,.28);border-radius:var(--radius);padding:42px 46px;display:flex;gap:34px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.price-note .txt{max-width:640px}
+.price-note h3{font-size:24px;margin-bottom:10px;color:var(--cream)}
+.price-note p{color:var(--cream-2);font-size:16px}
 
-    /* ============ SECTION TITLES ============ */
-    .sec{padding:100px 0}
-    .sec-head{margin-bottom:54px;max-width:760px}
-    .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-    .sec-head.center .eyebrow{justify-content:center}
-    .sec-head h2{font-size:clamp(2rem,5vw,3.3rem);font-weight:800;line-height:1.05;margin-bottom:18px}
+/* Process */
+.process{background:var(--bg-2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:step}
+.step{position:relative;padding:36px 30px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);transition:.35s;overflow:hidden}
+.step::before{counter-increment:step;content:"0" counter(step);position:absolute;top:18px;right:24px;font-family:'Playfair Display',serif;font-size:64px;color:rgba(201,168,106,.1);font-weight:700;line-height:1}
+.step:hover{border-color:rgba(201,168,106,.45);transform:translateY(-6px)}
+.step .si{width:52px;height:52px;border-radius:13px;background:rgba(163,22,33,.18);display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:22px}
+.step h3{font-size:21px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15px}
 
-    /* ============ CATEGORIES ============ */
-    .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .cat{
-      position:relative;border-radius:var(--radius);overflow:hidden;min-height:300px;
-      display:flex;align-items:flex-end;cursor:pointer;border:1px solid var(--line);
-      background:var(--card);
-    }
-    .cat .ph{position:absolute;inset:0;background:var(--ph) center/cover no-repeat;transition:transform .7s ease}
-    .cat:hover .ph{transform:scale(1.07)}
-    .cat::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(8,8,11,.92))}
-    .cat .ct{position:relative;z-index:2;padding:24px}
-    .cat .ct h3{font-size:1.3rem;font-weight:700;margin-bottom:6px}
-    .cat .ct p{color:var(--muted);font-size:.85rem}
-    .cat .ct .go{margin-top:14px;display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:700;font-size:.85rem}
-    .cat.tall{grid-row:span 1}
+/* Portfolio */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:16px}
+.gallery a{position:relative;border-radius:14px;overflow:hidden;background:#1a1414}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.gallery a:hover img{transform:scale(1.07)}
+.gallery a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,8,8,.55));opacity:0;transition:.35s}
+.gallery a:hover::after{opacity:1}
+.g-wide{grid-column:span 2}
+.g-tall{grid-row:span 2}
 
-    /* ============ PROCESS ============ */
-    .process{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
-    .step{
-      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;
-      position:relative;overflow:hidden;transition:transform .3s, border-color .3s;
-    }
-    .step:hover{transform:translateY(-6px);border-color:rgba(226,28,43,.5)}
-    .step::before{
-      counter-increment:step;content:"0" counter(step);
-      font-family:"Unbounded";font-weight:900;font-size:3.4rem;color:rgba(226,28,43,.16);
-      position:absolute;top:14px;right:20px;
-    }
-    .step h3{font-size:1.18rem;margin-bottom:10px;position:relative}
-    .step p{color:var(--muted);font-size:.92rem}
-    .step .ico{font-size:1.6rem;margin-bottom:14px}
+/* Reviews */
+.reviews{background:linear-gradient(180deg,#16100f,var(--bg))}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;transition:.35s}
+.rev:hover{border-color:rgba(201,168,106,.4);transform:translateY(-5px)}
+.rev .stars{color:var(--gold);font-size:16px;letter-spacing:3px;margin-bottom:18px}
+.rev .body{color:var(--cream-2);font-size:15.5px;flex:1;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.55}
+.rev .who{display:flex;align-items:center;gap:13px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.rev .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:17px;flex-shrink:0}
+.rev .who b{font-size:15px;display:block}
+.rev .who span{font-size:13px;color:var(--muted)}
 
-    /* price note */
-    .pricebox{
-      margin-top:54px;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;
-      background:linear-gradient(120deg,rgba(226,28,43,.14),rgba(20,20,24,.4));
-      border:1px solid rgba(226,28,43,.35);border-radius:24px;padding:34px 40px;
-    }
-    .pricebox .big{font-family:"Unbounded";font-weight:800;font-size:2.2rem;line-height:1}
-    .pricebox p{color:var(--muted);max-width:520px;margin-top:8px}
+/* FAQ */
+.faq-wrap{max-width:860px;margin:0 auto}
+.faq{border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;background:rgba(255,255,255,.02);transition:.3s}
+.faq.open{border-color:rgba(201,168,106,.4);background:rgba(255,255,255,.04)}
+.faq-q{padding:24px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:20px}
+.faq-q h3{font-size:19px;font-family:'Manrope',sans-serif;font-weight:600;color:var(--cream)}
+.faq-q .pl{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;transition:.3s}
+.faq.open .pl{transform:rotate(45deg);background:var(--gold);color:var(--bg)}
+.faq-a{max-height:0;overflow:hidden;transition:.4s cubic-bezier(.4,0,.2,1)}
+.faq-a p{padding:0 28px 26px;color:var(--muted);font-size:16px}
 
-    /* ============ GALLERY / WORKS ============ */
-    .filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
-    .filters button{
-      padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;
-      color:var(--muted);font-weight:600;font-size:.9rem;cursor:pointer;transition:.25s;font-family:inherit;
-    }
-    .filters button.active,.filters button:hover{background:var(--red);border-color:var(--red);color:#fff}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .work{
-      position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;
-      cursor:pointer;border:1px solid var(--line);background:var(--card);
-    }
-    .work .ph{position:absolute;inset:0;background:var(--ph) center/cover no-repeat;transition:transform .6s ease}
-    .work:hover .ph{transform:scale(1.08)}
-    .work .ov{
-      position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;
-      background:linear-gradient(transparent 45%,rgba(8,8,11,.9));opacity:.9;transition:opacity .3s;
-    }
-    .work .ov .tag{font-size:.72rem;color:var(--red);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-    .work .ov h4{font-size:1.05rem;font-weight:700;margin-top:4px}
-    .work .zoom{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
-    .work:hover .zoom{opacity:1}
+/* Contact / Form */
+.contact{background:var(--bg-2);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;bottom:-150px;left:-100px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(163,22,33,.18),transparent 65%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:start;position:relative}
+.contact-info h2{font-size:clamp(28px,4vw,46px);margin:18px 0 22px}
+.contact-info>p{color:var(--cream-2);font-size:17px;margin-bottom:36px;max-width:460px}
+.ci-item{display:flex;gap:18px;align-items:center;margin-bottom:24px}
+.ci-item .ic{width:50px;height:50px;border-radius:13px;background:rgba(201,168,106,.12);border:1px solid rgba(201,168,106,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
+.ci-item .lbl{font-size:13px;color:var(--muted);letter-spacing:.05em}
+.ci-item .val{font-size:18px;font-weight:600;color:var(--cream)}
+.ci-item a.val:hover{color:var(--gold)}
+.contact-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.form-card{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:24px;padding:42px;backdrop-filter:blur(8px)}
+.form-card h3{font-size:26px;margin-bottom:8px}
+.form-card .sub{color:var(--muted);font-size:15px;margin-bottom:28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;color:var(--beige);margin-bottom:8px;letter-spacing:.04em;font-weight:500}
+.field input,.field select,.field textarea{
+  width:100%;padding:15px 18px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(0,0,0,.25);color:var(--cream);font-size:15px;font-family:'Manrope',sans-serif;transition:.25s;
+}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:rgba(0,0,0,.4)}
+.field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23c9a86a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
+.field select option{background:#1a1414;color:var(--cream)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-card .btn{width:100%;margin-top:8px}
+.form-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px}
+.form-success{display:none;text-align:center;padding:30px 10px}
+.form-success.show{display:block}
+.form-success .ic{width:72px;height:72px;border-radius:50%;background:rgba(37,211,102,.15);border:1px solid #25D366;color:#25D366;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.form-success h3{font-size:24px;margin-bottom:10px}
+.form-success p{color:var(--muted)}
 
-    /* placeholder fallback styling */
-    .ph.broken,.ct-ph.broken{
-      background:linear-gradient(135deg,#1c1c22,#101013) !important;
-    }
+/* Footer */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:48px}
+.foot-about p{color:var(--muted);font-size:15px;margin-top:20px;max-width:340px}
+.foot-col h4{font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;margin-bottom:20px;letter-spacing:.04em}
+.foot-col a,.foot-col p{display:block;color:var(--muted);font-size:14.5px;margin-bottom:12px;transition:.25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13.5px;color:var(--muted)}
 
-    /* ============ WHY / ADVANTAGES ============ */
-    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .adv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .3s,border-color .3s}
-    .adv:hover{transform:translateY(-5px);border-color:rgba(226,28,43,.4)}
-    .adv .ico{font-size:1.8rem;margin-bottom:14px}
-    .adv h3{font-size:1.12rem;margin-bottom:8px}
-    .adv p{color:var(--muted);font-size:.9rem}
+/* Floating WhatsApp */
+.fab{position:fixed;right:26px;bottom:26px;z-index:150;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.fab a{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px -8px rgba(0,0,0,.6);transition:.3s;position:relative}
+.fab a:hover{transform:scale(1.08)}
+.fab-wa{background:#25D366;color:#fff}
+.fab-call{background:linear-gradient(135deg,var(--red-bright),var(--red-2));color:#fff}
+.fab a::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid;animation:pulse 2.2s infinite}
+.fab-wa::before{border-color:#25D366}
+.fab-call::before{border-color:var(--red-bright)}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
 
-    /* ============ REVIEWS ============ */
-    .reviews{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .rev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
-    .rev .stars{color:var(--gold);font-size:1rem;margin-bottom:14px;letter-spacing:2px}
-    .rev p{color:#d9dce2;font-size:.95rem;flex:1}
-    .rev .who{display:flex;align-items:center;gap:12px;margin-top:20px}
-    .rev .ava{width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,var(--red),var(--red-deep));display:flex;align-items:center;justify-content:center;font-weight:800;font-family:"Unbounded";color:#fff}
-    .rev .who b{font-size:.95rem;display:block}
-    .rev .who small{color:var(--muted);font-size:.78rem}
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
 
-    /* ============ CONTACT / FORM ============ */
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .field{display:flex;flex-direction:column;gap:7px}
-    .field label{font-size:.82rem;font-weight:600;color:var(--muted)}
-    .field input,.field select,.field textarea{
-      background:#0e0e11;border:1px solid var(--line);border-radius:12px;padding:13px 15px;
-      color:var(--fg);font-family:inherit;font-size:.95rem;transition:border-color .25s;width:100%;
-    }
-    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red)}
-    .field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%239aa0ab' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    form .field{margin-bottom:16px}
-    .form-note{font-size:.78rem;color:var(--muted);margin-top:6px}
-    .contact-info .ci{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--line)}
-    .contact-info .ci .ico{width:46px;height:46px;border-radius:12px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-    .contact-info .ci b{display:block;font-size:1.05rem}
-    .contact-info .ci span{color:var(--muted);font-size:.9rem}
-    .contact-info .ci a{color:var(--muted)}
-    .contact-info .ci a:hover{color:var(--fg)}
-    .form-ok{display:none;background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.5);color:#9bf3c0;padding:14px;border-radius:12px;margin-top:14px;font-size:.92rem}
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:300;background:rgba(12,10,10,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:28px;transform:translateX(100%);transition:.4s}
+.mobile-menu.open{transform:none}
+.mobile-menu a{font-family:'Playfair Display',serif;font-size:28px;color:var(--cream)}
+.mobile-menu .close{position:absolute;top:26px;right:26px;font-size:40px;color:var(--cream);background:none;border:none;cursor:pointer;line-height:1}
 
-    /* ============ FOOTER ============ */
-    footer.ft{background:#070708;border-top:1px solid var(--line);padding:64px 0 30px}
-    .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
-    .ft-grid h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:18px;font-family:"Manrope";font-weight:700}
-    .ft-grid a,.ft-grid p{display:block;color:#c2c6cd;font-size:.92rem;margin-bottom:11px}
-    .ft-grid a:hover{color:var(--red)}
-    .ft-about p{color:var(--muted);font-size:.9rem;margin-top:14px;max-width:300px}
-    .socials{display:flex;gap:10px;margin-top:18px}
-    .socials a{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:.25s}
-    .socials a:hover{background:var(--red);border-color:var(--red)}
-    .ft-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:.82rem}
-
-    /* ============ WHATSAPP FLOAT ============ */
-    .wa-float{
-      position:fixed;right:22px;bottom:24px;z-index:80;width:62px;height:62px;border-radius:50%;
-      background:#25d366;display:flex;align-items:center;justify-content:center;
-      box-shadow:0 14px 40px rgba(37,211,102,.5);transition:transform .25s;animation:pulse 2.4s infinite;
-    }
-    .wa-float:hover{transform:scale(1.08)}
-    .wa-float svg{width:34px;height:34px;fill:#fff}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-
-    /* ============ MODAL (lightbox) ============ */
-    .modal{position:fixed;inset:0;z-index:120;background:rgba(5,5,7,.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:30px}
-    .modal.open{display:flex}
-    .modal .box{max-width:900px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-    .modal .mph{width:100%;height:60vh;background:var(--ph) center/cover no-repeat}
-    .modal .mtxt{padding:22px 26px}
-    .modal .mtxt .tag{color:var(--red);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-    .modal .mtxt h3{font-size:1.4rem;margin:6px 0 8px}
-    .modal .mtxt p{color:var(--muted);font-size:.92rem}
-    .modal .close{position:absolute;top:22px;right:26px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);color:#fff;font-size:1.4rem;cursor:pointer}
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.in{opacity:1;transform:none}
-
-    /* ============ RESPONSIVE ============ */
-    @media(max-width:1000px){
-      .hero-grid{grid-template-columns:1fr;gap:36px}
-      .hero-card{max-width:520px}
-      .cats,.steps,.grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
-      .why-grid{grid-template-columns:repeat(2,1fr)}
-      .ft-grid{grid-template-columns:1fr 1fr}
-      .contact-grid{grid-template-columns:1fr}
-      .pricebox{grid-template-columns:1fr;text-align:center}
-    }
-    @media(max-width:680px){
-      nav.menu,.nav-phone{display:none}
-      .burger{display:flex}
-      .cats,.steps,.grid,.rev-grid,.why-grid{grid-template-columns:1fr}
-      .ft-grid{grid-template-columns:1fr}
-      .form-row{grid-template-columns:1fr}
-      .nav-inner{height:66px}
-      .sec{padding:70px 0}
-      .mobile-menu.open{display:flex}
-    }
-    .mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;z-index:89;background:rgba(10,10,12,.97);backdrop-filter:blur(14px);flex-direction:column;padding:20px 22px;border-bottom:1px solid var(--line)}
-    .mobile-menu a{padding:13px 0;font-weight:600;border-bottom:1px solid var(--line)}
-  </style>
+@media(max-width:1024px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .price-factors{grid-template-columns:1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .about-visual img{height:440px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-phone{display:none}
+}
+@media(max-width:640px){
+  .container{padding:0 18px}
+  .section{padding:74px 0}
+  .cat-grid,.gallery,.rev-grid{grid-template-columns:1fr}
+  .gallery{grid-auto-rows:240px}
+  .g-wide{grid-column:span 1}
+  .g-tall{grid-row:span 1}
+  .steps{grid-template-columns:1fr}
+  .hero-stats{gap:30px}
+  .form-row{grid-template-columns:1fr}
+  .price-note{flex-direction:column;align-items:flex-start;text-align:left}
+  .foot-grid{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .about-badge{left:0}
+  .nav-cta .btn{padding:12px 20px;font-size:14px}
+}
+</style>
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header class="nav" id="nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="logo">
-        <div class="mark">JD</div>
-        <div>
-          <div class="brand-name">JD<span>.</span>MEBEL</div>
-          <small>Мебель на заказ · Караганда</small>
-        </div>
+<!-- HEADER -->
+<header id="header">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <div class="logo-mark"><span>JD</span></div>
+      <div class="logo-text"><b>JD Мебель</b><small>Karaganda</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">О нас</a>
+      <a href="#categories">Категории</a>
+      <a href="#pricing">Цены</a>
+      <a href="#process">Этапы</a>
+      <a href="#portfolio">Работы</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+77010290969" class="nav-phone">+7 701 029 0969<small>звоните ежедневно</small></a>
+      <a href="#contact" class="btn btn-primary">Рассчитать проект</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Закрыть">&times;</button>
+  <a href="#about">О нас</a>
+  <a href="#categories">Категории</a>
+  <a href="#pricing">Цены</a>
+  <a href="#process">Этапы</a>
+  <a href="#portfolio">Работы</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#contact" class="btn btn-primary" style="font-size:16px">Рассчитать проект</a>
+  <a href="tel:+77010290969" class="nav-phone" style="display:block;font-size:20px">+7 701 029 0969</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1920&q=80" alt="Кухня на заказ">
+  </div>
+  <div class="container hero-inner">
+    <span class="eyebrow reveal">Корпусная мебель на заказ • Караганда</span>
+    <h1 class="reveal">Создаём мебель <em>вашей мечты</em></h1>
+    <p class="reveal">Собственное производство полного цикла. Кухни, шкафы-купе, гардеробные и прихожие любой сложности — от замера и 3D-дизайна до установки под ключ. Более 1000 реализованных проектов.</p>
+    <div class="hero-actions reveal">
+      <a href="https://wa.me/77010290969?text=Здравствуйте!%20Хочу%20заказать%20мебель,%20подскажите%20стоимость" target="_blank" class="btn btn-wa btn-lg">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.85 9.85 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        Написать в WhatsApp
       </a>
-      <nav class="menu">
-        <a href="#cats">Категории</a>
-        <a href="#process">Процесс</a>
-        <a href="#works">Работы</a>
-        <a href="#why">Почему мы</a>
+      <a href="#contact" class="btn btn-ghost btn-lg">Бесплатный замер</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div><div class="num"><em>1000</em>+</div><div class="lbl">успешных проектов</div></div>
+      <div><div class="num">13<em>k</em></div><div class="lbl">подписчиков в соцсетях</div></div>
+      <div><div class="num">10<em>+</em></div><div class="lbl">лет на рынке</div></div>
+      <div><div class="num"><em>100%</em></div><div class="lbl">по договору и в срок</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Нас рекомендуют ВСЕМ</span><span>Своё производство</span><span>Проекты любой сложности</span><span>Фурнитура BLUM</span><span>Искусственный камень</span><span>3D-дизайн в подарок</span>
+    <span>Нас рекомендуют ВСЕМ</span><span>Своё производство</span><span>Проекты любой сложности</span><span>Фурнитура BLUM</span><span>Искусственный камень</span><span>3D-дизайн в подарок</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <span class="eyebrow">О компании</span>
+      <h2>Мебель, которая создаётся под вас</h2>
+      <p>JD Мебель — это собственное производство корпусной мебели в Караганде. Мы не перепродаём — мы проектируем, изготавливаем и устанавливаем каждое изделие сами, контролируя качество на каждом этапе.</p>
+      <p>За нашими проектами стоит команда мастеров: <b>Жанеля</b> ведёт дизайн и подбор материалов, <b>Дулат</b> сопровождает заказ, <b>Андрей</b> отвечает за безупречную установку.</p>
+      <ul class="about-points">
+        <li><span class="ic">✦</span><div><b>Реализация проектов любой сложности</b> — от компактной кухни до гардеробной мечты.</div></li>
+        <li><span class="ic">✦</span><div><b>Договор и гарантия</b> — всё официально, как положено.</div></li>
+        <li><span class="ic">✦</span><div><b>Премиальная фурнитура</b> — BLUM с доводчиками, столешницы из искусственного камня.</div></li>
+      </ul>
+    </div>
+    <div class="about-visual reveal">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Современная кухня на заказ">
+      <div class="about-badge"><b>1000+</b><span>проектов мечты воплощено</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Что мы делаем</span>
+      <h2>Примеры работ по категориям</h2>
+      <p>Каждое изделие проектируется индивидуально под ваше помещение, задачи и бюджет. Выберите направление — и мы покажем, как это может выглядеть у вас.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80" alt="Кухни на заказ">
+        <div class="cat-info"><h3>Кухни</h3><p>Современные, классические, с островом и встроенной техникой</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80" alt="Шкафы-купе и гардеробные">
+        <div class="cat-info"><h3>Шкафы-купе и гардеробные</h3><p>Вместительные системы хранения до потолка</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80" alt="Прихожие на заказ">
+        <div class="cat-info"><h3>Прихожие</h3><p>Функциональные, с зеркалом и местом для всего</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80" alt="Мебель для ванной">
+        <div class="cat-info"><h3>Мебель для ванной</h3><p>Тумбы под камень, влагостойкие материалы</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Гостиные и ТВ-зоны">
+        <div class="cat-info"><h3>Гостиные и ТВ-зоны</h3><p>Стенки, стеллажи и медиа-зоны под интерьер</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+      <div class="cat-card reveal">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Спальни и детские">
+        <div class="cat-info"><h3>Спальни и детские</h3><p>Кровати, комоды, рабочие зоны — комплектом</p><span class="arrow">Обсудить проект →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PHILOSOPHY -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="price-quote reveal">
+      <div class="qmark">“</div>
+      <h2>На мебель на заказ <b>не может быть фиксированной цены</b> — потому что каждый проект индивидуальный</h2>
+      <p>Каждый метр кухни уникален: внешний вид, материалы, внутреннее наполнение выбираете вы. Мы считаем стоимость целого изделия, а не «погонного метра» или части мебели. В одном метре может быть 3 двери на навесах, а в другом — 10 выдвижных ящиков с доводчиками.</p>
+    </div>
+
+    <div class="section-head reveal" style="text-align:center;max-width:600px;margin:0 auto 44px">
+      <h2 style="font-size:clamp(26px,3.4vw,38px)">Что влияет на цену</h2>
+    </div>
+    <div class="price-factors">
+      <div class="factor reveal"><div class="n">01</div><h3>Материалы</h3><p>Какие фасады, плиты, фурнитуру и столешницу вы выбираете — и их количество.</p></div>
+      <div class="factor reveal"><div class="n">02</div><h3>Внутреннее наполнение</h3><p>Ящики, доводчики, подъёмники, организация хранения и системы BLUM.</p></div>
+      <div class="factor reveal"><div class="n">03</div><h3>Сложность работы</h3><p>Нестандартные формы, радиусы, встройка техники и индивидуальные решения.</p></div>
+    </div>
+
+    <div class="price-note reveal">
+      <div class="txt">
+        <h3>Как сориентироваться по стоимости?</h3>
+        <p>Отправьте размеры или вызовите мастера на бесплатный замер — мы составим примерный расчёт, а позже обсудим детали. Мы предлагаем на выбор несколько ценовых сегментов: каждый подберёт решение под свой бюджет.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-lg">Получить расчёт</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2>6 шагов к мебели мечты</h2>
+      <p>Прозрачный процесс, где вы видите результат ещё до начала изготовления.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="si">📞</div><h3>Звонок или сообщение</h3><p>Свяжитесь с нами удобным способом — обсудим вашу задачу и пожелания.</p></div>
+      <div class="step reveal"><div class="si">📐</div><h3>Замер</h3><p>Мастер выезжает бесплатно и снимает точные размеры помещения.</p></div>
+      <div class="step reveal"><div class="si">🖥️</div><h3>3D-дизайн</h3><p>Создаём наглядный проект — вы видите будущую мебель до рубля и сантиметра.</p></div>
+      <div class="step reveal"><div class="si">🎨</div><h3>Согласование материалов</h3><p>Подбираем фасады, фурнитуру и наполнение под ваш стиль и бюджет.</p></div>
+      <div class="step reveal"><div class="si">📝</div><h3>Договор</h3><p>Фиксируем сроки, стоимость и гарантии официально — всё как положено.</p></div>
+      <div class="step reveal"><div class="si">🔨</div><h3>Изготовление и установка</h3><p>Производим на своём оборудовании и монтируем под ключ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Портфолио</span>
+      <h2>Наши реализованные проекты</h2>
+      <p>Реальные интерьеры наших клиентов в Караганде и области.</p>
+    </div>
+    <div class="gallery">
+      <a href="#contact" class="g-wide g-tall reveal"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=80" alt="Проект кухни"></a>
+      <a href="#contact" class="reveal"><img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=600&q=80" alt="Шкаф на заказ"></a>
+      <a href="#contact" class="reveal"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Кухня белая"></a>
+      <a href="#contact" class="g-wide reveal"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1000&q=80" alt="Гардеробная"></a>
+      <a href="#contact" class="reveal"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80" alt="Тумба в ванную"></a>
+      <a href="#contact" class="g-tall reveal"><img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=600&q=80" alt="Кухня тёмная"></a>
+      <a href="#contact" class="reveal"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=600&q=80" alt="Кухня современная"></a>
+      <a href="#contact" class="g-wide reveal"><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=1000&q=80" alt="Гостиная"></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow">Отзывы клиентов</span>
+      <h2>Нас рекомендуют всем</h2>
+      <p>Настоящие отзывы заказчиков о работе JD Мебель.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Осталась очень довольна работой! Мастер помог с дизайном, даёт хорошие рекомендации при выборе материала. Работают аккуратно, заключают договор — всё как положено. Спасибо Дулату и Жанеле!»</p>
+        <div class="who"><div class="av">Л</div><div><b>Людмила</b><span>Кухня на заказ</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Заказывала кухню из искусственного камня — сделали за 15 дней, качественно, изготовили раньше срока на 10 дней! Вся кухня до сих пор как новая. Мебель на заказ стоит того!»</p>
+        <div class="who"><div class="av">Д</div><div><b>Даяна</b><span>Кухня, искусственный камень</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Заказала прихожую — очень удобно, все вещи теперь в шкафу, даже лыжи) Очень вместительный, ничего не разваливается. По цене получилось очень даже доступно.»</p>
+        <div class="who"><div class="av">А</div><div><b>Алина</b><span>Прихожая</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Молодцы! Молодые и очень добросовестные мастера. Всё изготовили в срок и качественно. Большое спасибо вам!»</p>
+        <div class="who"><div class="av">Г</div><div><b>Гульнар</b><span>Корпусная мебель</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Увидела такую кухню у подруги и влюбилась 😍 Исполнили всё на высоком уровне и в сроки. Нереально функциональная и вместительная. Жанеля и Дулат, у вас золотые руки!»</p>
+        <div class="who"><div class="av">А</div><div><b>Айнура</b><span>Кухня</span></div></div>
+      </div>
+      <div class="rev reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">«Я в восторге! Спасибо Жанеле за терпение при выборе материалов, Дулату за сопровождение, Андрею за установку. У меня нереально крутая кухня — все подруги в шоке!»</p>
+        <div class="who"><div class="av">П</div><div><b>Полина</b><span>Тёмная кухня</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow">Вопрос — ответ</span>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq reveal"><div class="faq-q"><h3>А как же ориентироваться по цене?</h3><div class="pl">+</div></div><div class="faq-a"><p>Отправьте размеры помещения либо вызовите нас на бесплатный замер — мы составим примерный расчёт, а позже обсудим детали. Так вы сразу поймёте порядок стоимости именно вашего проекта.</p></div></div>
+      <div class="faq reveal"><div class="faq-q"><h3>У вас дорого?</h3><div class="pl">+</div></div><div class="faq-a"><p>Мы предлагаем на выбор несколько ценовых сегментов — каждый клиент подберёт решение под свой бюджет. Цена зависит от материалов, наполнения и сложности, поэтому формируется индивидуально.</p></div></div>
+      <div class="faq reveal"><div class="faq-q"><h3>Почему нет фиксированных цен на сайте?</h3><div class="pl">+</div></div><div class="faq-a"><p>Каждый проект уникален: один метр кухни может содержать 3 простые двери, а другой — 10 выдвижных ящиков с доводчиками. Поэтому мы считаем стоимость готового изделия целиком, а не «по погонному метру».</p></div></div>
+      <div class="faq reveal"><div class="faq-q"><h3>Сколько занимает изготовление?</h3><div class="pl">+</div></div><div class="faq-a"><p>Сроки зависят от сложности проекта. Многие кухни мы изготавливаем за 15–20 дней, а нередко сдаём раньше срока — это подтверждают наши клиенты в отзывах.</p></div></div>
+      <div class="faq reveal"><div class="faq-q"><h3>Вы работаете по договору?</h3><div class="pl">+</div></div><div class="faq-a"><p>Да, всё оформляется официально: договор, фиксированные сроки и гарантия. Мы сопровождаем заказ от замера до установки под ключ.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Связаться</span>
+      <h2>Рассчитаем ваш проект</h2>
+      <p>Оставьте заявку или напишите в WhatsApp — обсудим вашу мебель, договоримся о бесплатном замере и подготовим расчёт.</p>
+      <div class="ci-item">
+        <div class="ic">📞</div>
+        <div><div class="lbl">Телефон / WhatsApp</div><a href="tel:+77010290969" class="val">+7 701 029 0969</a></div>
+      </div>
+      <div class="ci-item">
+        <div class="ic">📍</div>
+        <div><div class="lbl">Город</div><div class="val">Караганда, Казахстан</div></div>
+      </div>
+      <div class="ci-item">
+        <div class="ic">🕘</div>
+        <div><div class="lbl">Режим работы</div><div class="val">Ежедневно, 9:00 — 20:00</div></div>
+      </div>
+      <div class="contact-actions">
+        <a href="https://wa.me/77010290969?text=Здравствуйте!%20Хочу%20заказать%20мебель,%20подскажите%20стоимость" target="_blank" class="btn btn-wa btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.85 9.85 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+77010290969" class="btn btn-ghost btn-lg">Позвонить</a>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="leadForm">
+        <h3>Заявка на расчёт</h3>
+        <p class="sub">Заполните форму — и заявка уйдёт нам прямо в WhatsApp.</p>
+        <div class="field">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 ___ ___ __ __" required>
+        </div>
+        <div class="field">
+          <label for="furniture">Желаемая мебель</label>
+          <select id="furniture" name="furniture" required>
+            <option value="" disabled selected>Выберите из списка</option>
+            <option>Кухня</option>
+            <option>Шкаф-купе</option>
+            <option>Гардеробная</option>
+            <option>Прихожая</option>
+            <option>Мебель для ванной</option>
+            <option>Гостиная / ТВ-зона</option>
+            <option>Спальня</option>
+            <option>Детская</option>
+            <option>Офисная / коммерческая мебель</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comment">Комментарий (необязательно)</label>
+          <textarea id="comment" name="comment" placeholder="Размеры, пожелания, сроки..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Отправить заявку в WhatsApp</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Заявка готова!</h3>
+        <p>Мы открыли WhatsApp с вашим сообщением. Если окно не открылось — позвоните нам по номеру +7 701 029 0969.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#top" class="logo">
+          <div class="logo-mark"><span>JD</span></div>
+          <div class="logo-text"><b>JD Мебель</b><small>Karaganda</small></div>
+        </a>
+        <p>Корпусная мебель на заказ в Караганде. Собственное производство, более 1000 успешных проектов. Создаём мебель вашей мечты.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Навигация</h4>
+        <a href="#about">О нас</a>
+        <a href="#categories">Категории</a>
+        <a href="#pricing">Цены</a>
+        <a href="#process">Этапы работы</a>
+        <a href="#portfolio">Портфолио</a>
         <a href="#reviews">Отзывы</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-      <div style="display:flex;align-items:center;gap:18px">
-        <div class="nav-phone">
-          <b>+7 (700) 000-00-00</b>
-          <small>Ежедневно 9:00–20:00</small>
-        </div>
-        <a href="#contact" class="btn btn-red">Рассчитать проект</a>
-        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+      <div class="foot-col">
+        <h4>Контакты</h4>
+        <a href="tel:+77010290969">+7 701 029 0969</a>
+        <a href="https://wa.me/77010290969" target="_blank">WhatsApp</a>
+        <p>Караганда, Казахстан</p>
+        <p>Ежедневно 9:00 — 20:00</p>
       </div>
     </div>
-  </header>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#cats">Категории</a>
-    <a href="#process">Процесс</a>
-    <a href="#works">Работы</a>
-    <a href="#why">Почему мы</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#contact">Контакты</a>
-    <a href="tel:+77000000000" style="color:var(--red)">+7 (700) 000-00-00</a>
-  </div>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Корпусная мебель премиум-класса</span>
-        <h1>Мебель на заказ <em>по вашим</em> размерам в Караганде</h1>
-        <p class="lead">Проектируем и производим кухни, шкафы-купе, гардеробные и мебель для бизнеса на собственном производстве. Более <b style="color:#fff">1000 проектов</b> — от идеи и замера до монтажа под ключ.</p>
-        <div class="hero-cta">
-          <a class="btn btn-wa" id="waHero" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
-            Написать в WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="#works">Смотреть работы</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><b><i>1000</i>+</b><span>реализованных проектов</span></div>
-          <div class="stat"><b>13.6K</b><span>подписчиков в Instagram</span></div>
-          <div class="stat"><b>10<i> лет</i></b><span>на рынке Караганды</span></div>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <h3>Бесплатный расчёт за 1 день</h3>
-        <p>Оставьте заявку — дизайнер свяжется, уточнит детали и подготовит индивидуальный проект.</p>
-        <form id="heroForm">
-          <div class="field" style="margin-bottom:14px">
-            <label for="hf-name">Ваше имя</label>
-            <input id="hf-name" type="text" placeholder="Как к вам обращаться" required>
-          </div>
-          <div class="field" style="margin-bottom:14px">
-            <label for="hf-phone">Телефон / WhatsApp</label>
-            <input id="hf-phone" type="tel" placeholder="+7 (___) ___-__-__" required>
-          </div>
-          <div class="field" style="margin-bottom:18px">
-            <label for="hf-type">Какая мебель нужна?</label>
-            <select id="hf-type" required>
-              <option value="" disabled selected>Выберите из списка</option>
-              <option>Кухня</option>
-              <option>Шкаф-купе</option>
-              <option>Гардеробная</option>
-              <option>Прихожая</option>
-              <option>Детская / подростковая</option>
-              <option>Спальня</option>
-              <option>Гостиная / ТВ-зона</option>
-              <option>Ванная комната</option>
-              <option>Мебель для бизнеса (офис, кафе, магазин)</option>
-              <option>Другое</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-red" style="width:100%">Получить расчёт</button>
-          <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
-        </form>
-        <div class="form-ok" id="heroOk">✓ Спасибо! Заявка принята — мы свяжемся с вами в ближайшее время.</div>
-      </div>
-    </div>
-    <div class="scroll-hint">листайте вниз</div>
-  </section>
-
-  <!-- marquee -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Кухни на заказ</span><span>Шкафы-купе</span><span>Гардеробные</span><span>Детские</span><span>Мебель для бизнеса</span><span>Собственное производство</span>
-      <span>Кухни на заказ</span><span>Шкафы-купе</span><span>Гардеробные</span><span>Детские</span><span>Мебель для бизнеса</span><span>Собственное производство</span>
+    <div class="foot-bottom">
+      <span>© 2026 JD Мебель — Создаём мебель вашей мечты</span>
+      <span>Корпусная мебель на заказ • Караганда</span>
     </div>
   </div>
+</footer>
 
-  <!-- ============ CATEGORIES ============ -->
-  <section class="sec" id="cats">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Что мы делаем</span>
-        <h2>Категории мебели на заказ</h2>
-        <p class="lead">Любой проект — индивидуально под ваше пространство, материалы и бюджет. Ниже примеры направлений, в которых мы работаем.</p>
-      </div>
-      <div class="cats" id="catsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ PROCESS ============ -->
-  <section class="sec process" id="process">
-    <div class="wrap">
-      <div class="sec-head center reveal">
-        <span class="eyebrow">Как мы работаем</span>
-        <h2>6 этапов — от идеи до готовой мебели</h2>
-        <p class="lead" style="margin:0 auto">Прозрачный процесс без сюрпризов. Вы видите проект и понимаете стоимость ещё до начала производства.</p>
-      </div>
-      <div class="steps" id="stepsGrid"></div>
-
-      <!-- price emphasis -->
-      <div class="pricebox reveal">
-        <div class="big">Почему<br>нет цен?</div>
-        <p>Каждый проект уникален: размеры, материалы, фурнитура, наполнение и сложность монтажа — всё влияет на стоимость. Поэтому мы не пишем «цены с потолка», а <b style="color:#fff">честно просчитываем каждый заказ индивидуально</b> после замера. Так вы платите ровно за свою мебель — без переплат и навязанных решений.</p>
-        <a href="#contact" class="btn btn-red">Получить точный расчёт</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WORKS / GALLERY ============ -->
-  <section class="sec" id="works">
-    <div class="wrap">
-      <div class="sec-head center reveal">
-        <span class="eyebrow">Портфолио</span>
-        <h2>Примеры наших работ</h2>
-        <p class="lead" style="margin:0 auto">Более 1000 реализованных проектов в Караганде и области. Выберите категорию, чтобы посмотреть подборку.</p>
-      </div>
-      <div class="filters" id="filters"></div>
-      <div class="grid" id="worksGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ WHY ============ -->
-  <section class="sec" id="why">
-    <div class="wrap">
-      <div class="sec-head center reveal">
-        <span class="eyebrow">Наши преимущества</span>
-        <h2>Почему клиенты выбирают JD.MEBEL</h2>
-      </div>
-      <div class="why-grid" id="whyGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ REVIEWS ============ -->
-  <section class="sec reviews" id="reviews">
-    <div class="wrap">
-      <div class="sec-head center reveal">
-        <span class="eyebrow">Отзывы клиентов</span>
-        <h2>Нам доверяют 1000+ семей</h2>
-        <p class="lead" style="margin:0 auto">Реальные отзывы из нашего Instagram-аккаунта @jd.mebel и WhatsApp-переписок.</p>
-      </div>
-      <div class="rev-grid" id="revGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="sec" id="contact">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Связаться с нами</span>
-        <h2>Рассчитаем ваш проект бесплатно</h2>
-        <p class="lead">Заполните форму или напишите в WhatsApp — подберём решение под ваш бюджет и подготовим индивидуальный расчёт.</p>
-      </div>
-      <div class="contact-grid">
-        <form id="mainForm" class="reveal">
-          <div class="form-row">
-            <div class="field">
-              <label for="f-name">Имя</label>
-              <input id="f-name" type="text" placeholder="Ваше имя" required>
-            </div>
-            <div class="field">
-              <label for="f-phone">Телефон / WhatsApp</label>
-              <input id="f-phone" type="tel" placeholder="+7 (___) ___-__-__" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-type">Желаемая мебель</label>
-            <select id="f-type" required>
-              <option value="" disabled selected>Выберите из списка</option>
-              <option>Кухня</option>
-              <option>Шкаф-купе</option>
-              <option>Гардеробная</option>
-              <option>Прихожая</option>
-              <option>Детская / подростковая</option>
-              <option>Спальня</option>
-              <option>Гостиная / ТВ-зона</option>
-              <option>Ванная комната</option>
-              <option>Мебель для бизнеса (офис, кафе, магазин)</option>
-              <option>Другое</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg">Комментарий (необязательно)</label>
-            <textarea id="f-msg" rows="3" placeholder="Размеры, пожелания, сроки..."></textarea>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <button type="submit" class="btn btn-red">Отправить заявку</button>
-            <a class="btn btn-wa" id="waMain" target="_blank" rel="noopener">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
-              Написать в WhatsApp
-            </a>
-          </div>
-          <div class="form-ok" id="mainOk">✓ Спасибо! Заявка принята — дизайнер свяжется с вами в течение рабочего дня.</div>
-        </form>
-
-        <div class="contact-info reveal">
-          <div class="ci">
-            <div class="ico">📞</div>
-            <div><b><a href="tel:+77000000000">+7 (700) 000-00-00</a></b><span>Звонки и WhatsApp · ежедневно 9:00–20:00</span></div>
-          </div>
-          <div class="ci">
-            <div class="ico">📍</div>
-            <div><b>г. Караганда</b><span>Шоурум и производство — адрес уточняйте у менеджера</span></div>
-          </div>
-          <div class="ci">
-            <div class="ico">📷</div>
-            <div><b><a href="https://instagram.com/jd.mebel" target="_blank" rel="noopener">@jd.mebel</a></b><span>380 публикаций · 13 600 подписчиков</span></div>
-          </div>
-          <div class="ci">
-            <div class="ico">🕐</div>
-            <div><b>Режим работы</b><span>Пн–Вс: 9:00 – 20:00 без выходных</span></div>
-          </div>
-          <div style="margin-top:24px">
-            <a class="btn btn-wa" id="waInfo" target="_blank" rel="noopener" style="width:100%">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
-              Быстрый ответ в WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="ft">
-    <div class="wrap">
-      <div class="ft-grid">
-        <div class="ft-about">
-          <a href="#top" class="logo">
-            <div class="mark">JD</div>
-            <div><div class="brand-name">JD<span>.</span>MEBEL</div><small style="letter-spacing:.3em;color:var(--muted)">КАРАГАНДА</small></div>
-          </a>
-          <p>Корпусная мебель на заказ премиум-класса. Собственное производство, гарантия на изделия и индивидуальный расчёт каждого проекта.</p>
-          <div class="socials">
-            <a href="https://instagram.com/jd.mebel" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-            <a id="waFoot" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-            <a href="tel:+77000000000" aria-label="Телефон">📞</a>
-          </div>
-        </div>
-        <div>
-          <h4>Категории</h4>
-          <a href="#works">Кухни</a>
-          <a href="#works">Шкафы-купе</a>
-          <a href="#works">Гардеробные</a>
-          <a href="#works">Детские</a>
-          <a href="#works">Мебель для бизнеса</a>
-        </div>
-        <div>
-          <h4>Компания</h4>
-          <a href="#process">Как мы работаем</a>
-          <a href="#works">Портфолио</a>
-          <a href="#why">Преимущества</a>
-          <a href="#reviews">Отзывы</a>
-          <a href="#contact">Контакты</a>
-        </div>
-        <div>
-          <h4>Контакты</h4>
-          <a href="tel:+77000000000">+7 (700) 000-00-00</a>
-          <p>г. Караганда</p>
-          <p>Ежедневно 9:00–20:00</p>
-          <a href="https://instagram.com/jd.mebel" target="_blank" rel="noopener">@jd.mebel</a>
-        </div>
-      </div>
-      <div class="ft-bottom">
-        <span>© 2026 JD.MEBEL — мебель на заказ в Караганде. Все права защищены.</span>
-        <span>Фотографии работ — иллюстративные (Unsplash). Замените на реальные фото проектов.</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp float -->
-  <a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+<!-- FLOATING BUTTONS -->
+<div class="fab">
+  <a href="https://wa.me/77010290969?text=Здравствуйте!%20Хочу%20заказать%20мебель" target="_blank" class="fab-wa" aria-label="WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.85 9.85 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
   </a>
+  <a href="tel:+77010290969" class="fab-call" aria-label="Позвонить">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg>
+  </a>
+</div>
 
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <button class="close" id="modalClose">×</button>
-    <div class="box">
-      <div class="mph" id="modalImg"></div>
-      <div class="mtxt">
-        <div class="tag" id="modalTag"></div>
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
-      </div>
-    </div>
-  </div>
+<script>
+// Header scroll
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});
 
-  <script>
-  (function(){
-    "use strict";
+// Mobile menu
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu'),cm=document.getElementById('closeMenu');
+burger.addEventListener('click',()=>mm.classList.add('open'));
+cm.addEventListener('click',()=>mm.classList.remove('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
 
-    /* ===== НАСТРОЙКИ — ЗАМЕНИТЕ НА ДАННЫЕ КЛИЕНТА ===== */
-    var WA_PHONE = "77000000000"; // номер WhatsApp без + и пробелов (формат: 7XXXXXXXXXX)
-    var WA_TEXT  = "Здравствуйте! Хочу рассчитать мебель на заказ (JD.MEBEL)";
-    function waLink(extra){
-      var t = WA_TEXT + (extra ? (". " + extra) : "");
-      return "https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(t);
-    }
-    ["waHero","waMain","waInfo","waFloat","waFoot"].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.href = waLink();
-    });
+// Reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';io.observe(el)});
 
-    /* ===== ИЗОБРАЖЕНИЯ (Unsplash) с graceful fallback ===== */
-    function setBg(el, url){
-      el.style.setProperty("--ph", "url('"+url+"')");
-      var img = new Image();
-      img.onerror = function(){ el.classList.add("broken"); };
-      img.src = url;
-    }
+// FAQ accordion
+document.querySelectorAll('.faq').forEach(f=>{
+  f.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=f.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){f.classList.add('open');const a=f.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
 
-    /* ===== КАТЕГОРИИ ===== */
-    var CATS = [
-      {t:"Кухни на заказ", d:"От классики до минимализма — эргономика и вместительность", img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80", cat:"Кухни"},
-      {t:"Шкафы-купе", d:"Зеркала, стекло, подсветка — под нишу любой формы", img:"https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80", cat:"Шкафы"},
-      {t:"Гардеробные", d:"Продуманное наполнение для всей одежды и аксессуаров", img:"https://images.unsplash.com/photo-1616627561839-074385245ff6?auto=format&fit=crop&w=900&q=80", cat:"Гардеробные"},
-      {t:"Детские комнаты", d:"Безопасные материалы, кровати-чердаки, системы хранения", img:"https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=900&q=80", cat:"Детские"},
-      {t:"Гостиные и ТВ-зоны", d:"Стенки, тумбы и стеллажи под ваш интерьер", img:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80", cat:"Гостиные"},
-      {t:"Мебель для бизнеса", d:"Ресепшн, офис, кафе, магазины — под ключ", img:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80", cat:"Бизнес"}
-    ];
-    var catsGrid = document.getElementById("catsGrid");
-    CATS.forEach(function(c){
-      var d = document.createElement("a");
-      d.href = "#works"; d.className = "cat reveal";
-      d.innerHTML = '<div class="ph"></div><div class="ct"><h3>'+c.t+'</h3><p>'+c.d+'</p><span class="go">Смотреть работы →</span></div>';
-      catsGrid.appendChild(d);
-      setBg(d.querySelector(".ph"), c.img);
-      d.addEventListener("click", function(){ setTimeout(function(){ filterWorks(c.cat); }, 400); });
-    });
-
-    /* ===== ПРОЦЕСС ===== */
-    var STEPS = [
-      {i:"📐", t:"Заявка и консультация", d:"Вы оставляете заявку — дизайнер уточняет задачу, стиль и пожелания."},
-      {i:"📏", t:"Бесплатный замер", d:"Замерщик приезжает на объект и снимает точные размеры помещения."},
-      {i:"🎨", t:"Дизайн-проект", d:"Готовим 3D-визуализацию: вы видите будущую мебель ещё до производства."},
-      {i:"🧮", t:"Точный расчёт", d:"Считаем стоимость индивидуально — по материалам, фурнитуре и сложности."},
-      {i:"🛠️", t:"Производство", d:"Изготавливаем на собственном оборудовании с контролем качества."},
-      {i:"🚚", t:"Доставка и монтаж", d:"Привозим и собираем под ключ. Гарантия на изделие и фурнитуру."}
-    ];
-    var stepsGrid = document.getElementById("stepsGrid");
-    STEPS.forEach(function(s){
-      var d = document.createElement("div");
-      d.className = "step reveal";
-      d.innerHTML = '<div class="ico">'+s.i+'</div><h3>'+s.t+'</h3><p>'+s.d+'</p>';
-      stepsGrid.appendChild(d);
-    });
-
-    /* ===== РАБОТЫ ===== */
-    var WORKS = [
-      {cat:"Кухни", t:"Кухня в современном стиле", d:"Матовые фасады, встроенная техника, скрытая подсветка рабочей зоны.", img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Кухни", t:"Светлая угловая кухня", d:"Максимум систем хранения для небольшой площади.", img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Кухни", t:"Кухня-остров", d:"Просторная планировка с барной зоной и местом для семьи.", img:"https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Шкафы", t:"Шкаф-купе с зеркалом", d:"Зеркальные двери визуально расширяют пространство прихожей.", img:"https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Шкафы", t:"Встроенный шкаф под потолок", d:"Использует всю высоту комнаты, ничего не пропадает.", img:"https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Кухни", t:"Тёмная кухня с островом", d:"Графитовые фасады, столешница под камень, барная стойка.", img:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Шкафы", t:"Шкаф в спальню", d:"Распашной шкаф с антресолями в едином стиле комнаты.", img:"https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Гардеробные", t:"Гардеробная под ключ", d:"Открытые и закрытые секции, штанги, ящики, подсветка.", img:"https://images.unsplash.com/photo-1616627561839-074385245ff6?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Гардеробные", t:"Компактная гардеробная", d:"Продуманное наполнение даже для небольшой ниши.", img:"https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Детские", t:"Детская с зоной хранения", d:"Безопасные материалы и эргономика под рост ребёнка.", img:"https://images.unsplash.com/photo-1558211583-d26f610c1eb1?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Детские", t:"Подростковая комната", d:"Рабочее место, шкаф и кровать в едином стиле.", img:"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Гостиные", t:"ТВ-зона и стеллажи", d:"Современная стенка с нишей под телевизор и подсветкой.", img:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Гостиные", t:"Гостиная в светлых тонах", d:"Минималистичная мебель под общий интерьер.", img:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Гостиные", t:"Стеллаж и система хранения", d:"Встроенные полки и шкафы во всю стену гостиной.", img:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Бизнес", t:"Ресепшн для офиса", d:"Представительная стойка с логотипом и подсветкой.", img:"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"},
-      {cat:"Бизнес", t:"Рабочие места для офиса", d:"Столы, тумбы и шкафы для документов под ключ.", img:"https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&w=900&q=80"}
-    ];
-    var CAT_LIST = ["Все","Кухни","Шкафы","Гардеробные","Детские","Гостиные","Бизнес"];
-    var filters = document.getElementById("filters");
-    var worksGrid = document.getElementById("worksGrid");
-
-    CAT_LIST.forEach(function(c,i){
-      var b = document.createElement("button");
-      b.textContent = c; if(i===0) b.classList.add("active");
-      b.addEventListener("click", function(){ filterWorks(c); });
-      filters.appendChild(b);
-    });
-
-    function renderWorks(list){
-      worksGrid.innerHTML = "";
-      list.forEach(function(w){
-        var el = document.createElement("div");
-        el.className = "work reveal in";
-        el.innerHTML = '<div class="ph"></div><div class="zoom">🔍</div><div class="ov"><span class="tag">'+w.cat+'</span><h4>'+w.t+'</h4></div>';
-        worksGrid.appendChild(el);
-        setBg(el.querySelector(".ph"), w.img);
-        el.addEventListener("click", function(){ openModal(w); });
-      });
-    }
-    function filterWorks(cat){
-      Array.prototype.forEach.call(filters.children, function(b){
-        b.classList.toggle("active", b.textContent === cat);
-      });
-      renderWorks(cat === "Все" ? WORKS : WORKS.filter(function(w){ return w.cat === cat; }));
-    }
-    renderWorks(WORKS);
-
-    /* ===== МОДАЛКА ===== */
-    var modal = document.getElementById("modal");
-    function openModal(w){
-      setBg(document.getElementById("modalImg"), w.img);
-      document.getElementById("modalTag").textContent = w.cat;
-      document.getElementById("modalTitle").textContent = w.t;
-      document.getElementById("modalDesc").textContent = w.d + " Точную стоимость рассчитаем индивидуально после замера.";
-      modal.classList.add("open");
-    }
-    document.getElementById("modalClose").addEventListener("click", function(){ modal.classList.remove("open"); });
-    modal.addEventListener("click", function(e){ if(e.target === modal) modal.classList.remove("open"); });
-
-    /* ===== ПРЕИМУЩЕСТВА ===== */
-    var WHY = [
-      {i:"🏭", t:"Собственное производство", d:"Контролируем качество на каждом этапе и не зависим от подрядчиков."},
-      {i:"🧮", t:"Честный расчёт", d:"Считаем индивидуально — без скрытых наценок и «средних» цен."},
-      {i:"🎨", t:"3D-проект до оплаты", d:"Вы видите результат заранее и вносите правки до производства."},
-      {i:"🛡️", t:"Гарантия", d:"Гарантия на мебель и фурнитуру, сервисное обслуживание."},
-      {i:"⏱️", t:"Сроки", d:"Соблюдаем оговорённые сроки изготовления и монтажа."},
-      {i:"🧱", t:"Качественные материалы", d:"Проверенные плиты, кромка и фурнитура от надёжных брендов."},
-      {i:"📐", t:"Любые размеры", d:"Мебель под нестандартные ниши, углы и высоту потолков."},
-      {i:"⭐", t:"1000+ проектов", d:"Опыт и репутация, подтверждённые отзывами клиентов."}
-    ];
-    var whyGrid = document.getElementById("whyGrid");
-    WHY.forEach(function(w){
-      var d = document.createElement("div");
-      d.className = "adv reveal";
-      d.innerHTML = '<div class="ico">'+w.i+'</div><h3>'+w.t+'</h3><p>'+w.d+'</p>';
-      whyGrid.appendChild(d);
-    });
-
-    /* ===== ОТЗЫВЫ ===== */
-    var REVS = [
-      {n:"Айгуль", c:"Кухня на заказ", t:"Заказывали кухню — всё точно по размерам, ни миллиметра лишнего. Дизайнер помог с планировкой, монтаж аккуратный. Очень довольны!"},
-      {n:"Дмитрий", c:"Шкаф-купе", t:"Сделали шкаф-купе во всю стену. Понравилось, что сразу показали 3D-проект и честно посчитали стоимость. Рекомендую."},
-      {n:"Марина", c:"Гардеробная", t:"Мечтала о гардеробной — ребята продумали наполнение до мелочей. Качество материалов на высоте, сроки соблюдены."},
-      {n:"Ербол", c:"Мебель для офиса", t:"Заказывали ресепшн и шкафы для офиса. Сделали солидно, с логотипом компании. Работаем дальше."},
-      {n:"Светлана", c:"Детская", t:"Детскую делали для двоих детей — всё безопасно, продуманно, много мест хранения. Спасибо за подход!"},
-      {n:"Нурлан", c:"Кухня + гостиная", t:"Обставили всю квартиру в едином стиле. Цена честная, рассчитали под наш бюджет. Лучшие в Караганде!"}
-    ];
-    var revGrid = document.getElementById("revGrid");
-    REVS.forEach(function(r){
-      var d = document.createElement("div");
-      d.className = "rev reveal";
-      d.innerHTML = '<div class="stars">★★★★★</div><p>«'+r.t+'»</p><div class="who"><div class="ava">'+r.n.charAt(0)+'</div><div><b>'+r.n+'</b><small>'+r.c+'</small></div></div>';
-      revGrid.appendChild(d);
-    });
-
-    /* ===== ФОРМЫ ===== */
-    function handleForm(formId, okId, fields){
-      var form = document.getElementById(formId);
-      if(!form) return;
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        var data = fields.map(function(f){ return document.getElementById(f.id).value; });
-        // открыть WhatsApp с заполненными данными
-        var msg = "Заявка с сайта JD.MEBEL:\n" + fields.map(function(f,i){ return f.label+": "+(data[i]||"—"); }).join("\n");
-        var ok = document.getElementById(okId);
-        if(ok){ ok.style.display = "block"; }
-        form.reset();
-        window.open("https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(msg), "_blank");
-      });
-    }
-    handleForm("heroForm","heroOk",[{id:"hf-name",label:"Имя"},{id:"hf-phone",label:"Телефон"},{id:"hf-type",label:"Мебель"}]);
-    handleForm("mainForm","mainOk",[{id:"f-name",label:"Имя"},{id:"f-phone",label:"Телефон"},{id:"f-type",label:"Мебель"},{id:"f-msg",label:"Комментарий"}]);
-
-    /* ===== HEADER SCROLL ===== */
-    var nav = document.getElementById("nav");
-    window.addEventListener("scroll", function(){
-      nav.classList.toggle("scrolled", window.scrollY > 30);
-    });
-
-    /* ===== BURGER ===== */
-    var burger = document.getElementById("burger");
-    var mobileMenu = document.getElementById("mobileMenu");
-    burger.addEventListener("click", function(){ mobileMenu.classList.toggle("open"); });
-    Array.prototype.forEach.call(mobileMenu.querySelectorAll("a"), function(a){
-      a.addEventListener("click", function(){ mobileMenu.classList.remove("open"); });
-    });
-
-    /* ===== REVEAL ON SCROLL ===== */
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, {threshold:.12});
-    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
-
-    /* hero bg fallback */
-    (function(){
-      var img = new Image();
-      img.onerror = function(){
-        document.querySelector(".hero").style.setProperty("--img-hero","linear-gradient(135deg,#1c1c22,#0a0a0c)");
-      };
-      img.src = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=80";
-    })();
-
-  })();
-  </script>
+// Lead form -> WhatsApp
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const furn=document.getElementById('furniture').value;
+  const comment=document.getElementById('comment').value.trim();
+  let msg=`Здравствуйте! Заявка с сайта JD Мебель.\n\nИмя: ${name}\nТелефон: ${phone}\nЖелаемая мебель: ${furn}`;
+  if(comment)msg+=`\nКомментарий: ${comment}`;
+  window.open(`https://wa.me/77010290969?text=${encodeURIComponent(msg)}`,'_blank');
+  this.style.display='none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+</script>
 </body>
 </html>
